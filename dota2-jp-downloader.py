@@ -9,6 +9,8 @@ import zipfile
 import json
 import vdf
 import shutil
+import sys
+import time
 
 url = 'https://nihongoka.games/download/dota2/?format=zip'
 
@@ -27,6 +29,13 @@ files = {
     'leagues_japanese.json': (simple('leagues'), 'leagues_japanese.txt'),
     'richpresence_japanese.json': (default, 'richpresence_japanese.txt'),
 }
+
+# check dir name
+if not os.getcwd().endswith('dota 2 beta'):
+    print('"dota2-jp-downloader.exe"の配置場所が間違ってるようです')
+    print('5秒後に終了します')
+    time.sleep(5)
+    sys.exit(1)
 
 os.makedirs('game/dota_japanese/', exist_ok=True)
 
@@ -54,3 +63,4 @@ with urllib.request.urlopen(req) as res:
 print('書き出し中…')
 vpk.new('./pak01').save('pak01_dir.vpk')
 print('完了!')
+time.sleep(3)
