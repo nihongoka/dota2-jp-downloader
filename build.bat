@@ -1,0 +1,1 @@
+pyinstaller dota2-jp-downloader.py --onefile
