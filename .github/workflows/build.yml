@@ -14,7 +14,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v2
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-actions@v2
+        uses: goreleaser/goreleaser-action@v2
         with:
           version: ubuntu-latest
           args: release --rm-dist
