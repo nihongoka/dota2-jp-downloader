@@ -38,7 +38,9 @@ func main() {
 
 	wd, _ := os.Getwd()
 	if filepath.Base(wd) != "dota 2 beta" && !force {
-		log.Println("ファイルの配置場所が間違ってるっぽいよ? --force で無視できるよ")
+		log.Println("僕の配置場所が間違ってるっぽいよ?")
+		log.Println("ヒント: 'dota 2 beta'フォルダの真下においてね!")
+		log.Println("--force で無視できるよ")
 		time.Sleep(time.Second * 5)
 		os.Exit(1)
 	}
@@ -62,7 +64,7 @@ func main() {
 
 	var contents []vpk.Entry
 
-	zip, err := zip.NewReader(bytes.NewReader(body), int64(len(body)))
+	zip, _ := zip.NewReader(bytes.NewReader(body), int64(len(body)))
 	for _, file := range zip.File {
 		name := path.Base(file.Name)
 		woeName := name[:len(name)-len(path.Ext(name))]
