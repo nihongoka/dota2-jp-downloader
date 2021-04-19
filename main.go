@@ -36,7 +36,10 @@ func main() {
 	flag.BoolVar(&force, "force", false, "ignore check current directory")
 	flag.Parse()
 
-	wd, _ := os.Getwd()
+	wd, err := filepath.Abs(filepath.Dir(os.Args[0]))
+	if err != nil {
+		panic(err)
+	}
 	if filepath.Base(wd) != "dota 2 beta" && !force {
 		log.Println("僕の配置場所が間違ってるっぽいよ?")
 		log.Println("ヒント: 'dota 2 beta'フォルダの真下においてね!")
