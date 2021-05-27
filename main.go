@@ -130,10 +130,16 @@ func simpleBuilder(key string) func(map[string]string) string {
 }
 
 func escape(s string) string {
-	s = strings.ReplaceAll(s, "\\", "\\\\")
-	s = strings.ReplaceAll(s, "\n", "\\n")
-	s = strings.ReplaceAll(s, "\t", "\\t")
-	s = strings.ReplaceAll(s, "\"", "\\\"")
+	vv := [][2]string{
+		{"\\", "\\\\"},
+		{"?", "\\?"},
+		{"\n", "\\n"},
+		{"\t", "\\t"},
+		{"\"", "\\\""},
+	}
+	for _, v := range vv {
+		s = strings.ReplaceAll(s, v[0], v[1])
+	}
 	return s
 }
 
