@@ -13,3 +13,7 @@
 ## Mac版の注意
 
 執筆中…
+
+## ウイルス検知されたら
+
+Twitterの [@aoisensi](https://twitter.com/aoisensi) まで報告してくれると助かります
