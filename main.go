@@ -92,6 +92,9 @@ func main() {
 	}
 	log.Println("書き出し中…")
 	if err := vpk.Create(vpkc, contents, -1); err != nil {
+		log.Println("ファイルに書き込めないよ!!")
+		log.Println("Dota2が起動中かも 終了してね!")
+		time.Sleep(time.Second * 3)
 		panic(err)
 	}
 	log.Println("完了!!")
