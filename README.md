@@ -1,3 +1,9 @@
+# 使用不可になりました
+
+**代替手段は [nihongoka/dota2](https://github.com/nihongoka/dota2) を御覧ください**
+
+以下過去のREADME
+
 # Dota2翻訳データダウンローダー
 
 ## これは何?
